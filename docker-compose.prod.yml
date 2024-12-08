@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: development
+      target: production
     ports:
       - '3000:3000'
     depends_on:
@@ -17,10 +17,6 @@ services:
       - DB_USER=${MYSQL_USER}
       - DB_PASSWORD=${MYSQL_PASSWORD}
       - DB_NAME=${MYSQL_DATABASE}
-    volumes:
-      - .:/app
-      - /app/node_modules
-    command: npm run start:dev
     networks:
       - line-travel-network
 
@@ -46,4 +42,4 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_data:  
+  mysql_data: 

@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api-test:
+    container_name: line-travel-api-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    environment:
+      - DB_HOST=db-test
+      - DB_PORT=3306
+      - DB_USER=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DB_NAME=line_travel_test
+    depends_on:
+      - db-test
+    networks:
+      - line-travel-test-network
+
+  db-test:
+    container_name: line-travel-db-test
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=line_travel_test
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    networks:
+      - line-travel-test-network
+
+networks:
+  line-travel-test-network:
+    driver: bridge 
