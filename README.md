@@ -30,30 +30,38 @@ This project is a backend API service for managing hotel information, built with
 ## Project setup
 
 1. clone this repository
-2. install dependencies
-  ```bash
-  $ npm install
-  ```
-3. if you haven't installed Docker you have to install it
-4. run docker compose
-  ```bash
-  $ docker-compose up -d
-  ```
-5. create .env file and add your database credentials
+2. if you haven't installed Docker you have to install it
+3. create .env file and add your database credentials
   e.g.
   ```env
   MYSQL_ROOT_PASSWORD=root
   MYSQL_DATABASE=line_travel
   MYSQL_USER=appuser
   MYSQL_PASSWORD=appuserpassword
-
-  DB_HOST=localhost
-  DB_PORT=3306
-  DB_USER=appuser
-  DB_PASSWORD=appuserpassword
-  DB_NAME=line_travel
   ```
-6. run the project
+4. Build and run the containers
+  ```bash
+  # For development
+  $ docker-compose up -d
+  
+  # For production
+  $ docker-compose -f docker-compose.prod.yml up -d
+  
+  # For running tests
+  $ docker-compose -f docker-compose.test.yml up --abort-on-container-exit
+  ```
+5. The application will be available at http://localhost:3000
+
+## Development
+
+For local development without Docker:
+
+1. Install dependencies
+  ```bash
+  $ npm install
+  ```
+
+2. Run the project
   ```bash
   $ npm run start:dev
   ```
