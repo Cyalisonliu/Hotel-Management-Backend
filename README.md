@@ -21,12 +21,7 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-This project is a backend API service for managing hotel information, built with NestJS and MySQL.
-
-
+  
 ## Project setup
 
 1. clone this repository
