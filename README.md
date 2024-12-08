@@ -75,6 +75,7 @@ $ npm run test
 
 ## API Documentation
 API documentation is available through Swagger UI at `/api` endpoint when running the application.
+![API Screenshot](./public/api-screenshot.png)
 
 ### API Endpoints
 - `POST /hotels/upload`
