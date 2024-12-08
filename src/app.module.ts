@@ -17,6 +17,6 @@ import { HotelsModule } from './hotels/hotels.module';
     }),
     HotelsModule,
   ],
-  controllers: [AppController],
+  controllers: [],
 })
 export class AppModule {}
